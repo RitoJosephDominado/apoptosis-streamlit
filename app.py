@@ -18,13 +18,6 @@ if 'initial_value_df' not in st.session_state:
 if 'rate_df' not in st.session_state:
     st.session_state['rate_df'] = pd.read_csv('csvs/legewi_rates.txt')
 
-
-exit_app = st.sidebar.button("Shut Down")
-if exit_app:
-    pid = os.getpid()
-    p = psutil.Process(pid)
-    p.terminate()
-
 col1, col2 = st.columns(2)
 with col1:
     st.header('Rate constants')
